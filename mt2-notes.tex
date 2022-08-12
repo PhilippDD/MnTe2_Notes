@@ -4,8 +4,8 @@
 \usepackage{amsmath}
 
 \title{Better-than-minimal model of VB in MnTe}
-\author{Philipp \& Karel}
-\date{Aug10, 2022}
+\author{Philipp Ritzinger, Karel V\'yborn\'y}
+\date{Aug12, 2022}
 
 %%% fte-list
 %
@@ -16,7 +16,7 @@
 
 \maketitle
 
-\section*{Introduction}
+\section*{Overview}
 
 These notes follow on {\tt mte-notes} and {\tt mt1-notes} and describe
 an effective model of the valence band (VB) in MnTe. It considers
@@ -27,21 +27,33 @@ an effective model of the valence band (VB) in MnTe. It considers
 \end{equation}
 %
 where $H_{kp}$ is described in~\cite{PFjr} and $H_{SO}$ is (6) in
-{\tt mte-notes} --- both $6\times 6$ matrices. Both matrices are stated below. Parameters of these two
-terms are $a,b,c$ related to the effective masses simply by comparing
-e.g. $ck_z^2$ to $\hbar^2 k_z^2/2m_*$:
+{\tt mte-notes} --- both $6\times 6$ matrices. Both matrices are
+stated below. Parameters of $H_{kp}$ are $a,b,c$ related to the
+effective masses simply by comparing e.g. $ck_z^2$ to $\hbar^2 k_z^2/2m_*$:
 %
 \begin{equation}
   c=\frac{\hbar^2}{2m_*}\qquad \frac{m_*}{m_0}={\textstyle{\frac12}} \frac{\hbar^2}{cm_0}
   \label{eq-02}
 \end{equation}  
 %
-and $\Delta_{xy}\not=\Delta_z$. Next, $H_{cryst}$ (to be found in~\cite{LandT}
+and $e_z\to-\infty$ for the time being (N.B. there's also additional
+term, neglected at the moment, i.e. $d=0$). The spin-orbit term is
+parametrised by $\Delta_{xy}\not=\Delta_z$ and overlap of (the orbital
+parts of) the basis vectors~(3)~of~\cite{PFjr} $t=0$ in the A-point,
+i.e. $(k_x,k_y,k_z)=(0,0,0)$, and $t\propto k_z$ as we move along the $A\Gamma$
+line.
+
+Next, $H_{cryst}$ (to be found in~\cite{LandT}
 as $H_{B-4,g}$) acts effectively as another spin-orbit term albeit of
 non-relativistic origin: $J\sigma_x k_zk_x(k_x^2-3k_y^2)$ when magnetic
-moments are $\parallel \hat{x}$. 
+moments are $\parallel \hat{x}$. We denote its $\vec{k}$-dependence by
+$f(k_x,k_y,k_z)$ and the basic case has $f=k_zk_x(k_x^2-3k_y^2)$ while
+'cut-off variant' has $f=k_zk_x(k_x^2-3k_y^2)/(k_x^2+k_y^2+k_0^2)$ with
+another model parameter $k_0$ (this effectively means that higher order
+terms beyond $\propto k^4$ have been added in a certain specific way).
 
-\section*{Hamiltonians}
+\section*{Details}
+
 $$ H_{kp} = \frac{\hbar^2}{m_0} \begin{pmatrix}
 	a k_x^2 + b k_y^2 + c k_z^2 & (a-b) k_x k_y & 0 & & &\\
 	(a-b) k_x k_y & b k_x^2 + a k_y^2 + c k_z^2 & 0 & & & \\
@@ -60,7 +72,7 @@ $$ H_{SO} = \begin{pmatrix}
 t \Delta_{xy} & 0 & 0 & 0 & -i \Delta_{xy} & 0 \\
 \end{pmatrix}$$
 
-$$ H_{cryst} = J k_z k_x (k_x^2-3k_y^2) (\sigma_z \otimes I_3)$$
+%$$ H_{cryst} = J k_z k_x (k_x^2-3k_y^2) (\sigma_i \otimes I_3)$$
 $$ H_{cryst}= \begin{pmatrix}
 J k_z k_x (k_x^2-3k_y^2) & 0 & 0 &&& \\
 0 & J k_z k_x (k_x^2-3k_y^2) & 0 &&& \\
